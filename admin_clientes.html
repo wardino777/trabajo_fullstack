@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes - Vida Infinita</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="body-admin" style="margin: 0; background-color: #f5f6f8;">
+    <div class="contenedor-admin" style="display: flex; min-height: 100vh;">
+        
+    <aside class="menu-lateral">
+                <div class="logo-admin">
+                    <h2><i class="fa-solid fa-compass"></i> Vida Infinita</h2>
+                </div>
+                <nav class="navegacion-admin" style="display: flex; flex-direction: column; height: 100%;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="admin_home.html"><i class="fa-solid fa-border-all" style="width: 25px;"></i> Dashboard</a></li>
+                        <li><a href="admin_orders.html"><i class="fa-regular fa-file-lines" style="width: 25px;"></i> Orders</a></li>
+                        <li><a href="admin_productos.html"><i class="fa-solid fa-box" style="width: 25px; color: #a57c52;"></i> Inventory</a></li>
+                        <li><a href="admin_reports.html"><i class="fa-regular fa-file-lines" style="width: 25px;"></i> Reports</a></li>
+                        <li><a href="admin_usuarios.html"><i class="fa-solid fa-users" style="width: 25px;"></i> Employees</a></li>
+                        <li><a href="admin_clientes.html" class="activo"><i class="fa-solid fa-users" style="width: 25px;"></i> Customers</a></li>
+                    </ul>
+                    <ul style="list-style: none; padding: 0; margin-top: auto; margin-bottom: 20px;">
+                        <li><a href="admin_settings.html" style="display: block; padding: 10px 25px; color: #333; text-decoration: none; font-size: 0.9em;"><i class="fa-solid fa-gear" style="width: 20px;"></i> Settings</a></li>
+                        <li><a href="admin_profile.html" style="display: block; padding: 10px 25px; color: #333; text-decoration: none; font-size: 0.9em;"><i class="fa-solid fa-user" style="width: 20px;"></i> Profile</a></li>
+                        <li><a href="#" class="btn-buscar-global" style="display: block; padding: 10px 25px; color: #333; text-decoration: none; font-size: 0.9em;"><i class="fa-solid fa-magnifying-glass" style="width: 20px;"></i> Search</a></li>
+                        <li><a href="#" style="display: block; padding: 10px 25px; color: #333; text-decoration: none; font-size: 0.9em;"><i class="fa-solid fa-question" style="width: 20px; color: red;"></i> Help</a></li>
+                        <li><a href="index.html" style="display: block; padding: 10px 25px; color: #d9534f; text-decoration: none; font-size: 0.9em; font-weight: bold;"><i class="fa-solid fa-arrow-right-from-bracket" style="width: 20px;"></i> Cerrar Sesión</a></li>
+                    </ul>
+                    <div style="padding: 20px; border-top: 1px solid #dcdcdc; display: flex; align-items: center; gap: 10px;">
+                        <i class="fa-solid fa-user" style="font-size: 1.5em; color: #555;"></i> <b>Profile</b>
+                    </div>
+                </nav>
+            </aside>
+
+        <!-- CONTENIDO CENTRAL GRIS Y PLANO -->
+        <main class="contenido-central" style="flex-grow: 1; display: flex; flex-direction: column; background-color: #f4f6f9;">
+            <header class="header-admin" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid #e0e0e0; background-color: #f4f6f9;">
+                <div class="header-izq">
+                    <h1 style="font-size: 22px; font-weight: normal; color: #333; margin: 0;">Clientes Registrados</h1>
+                </div>
+            </header>
+            
+            <section class="panel-tabla" style="padding: 40px;">
+                <p style="margin-bottom: 15px; font-size: 14px; color: #333;">All Customers ˅</p>
+                
+                <!-- TABLA CALCADA -->
+                <table class="tabla-admin" style="width: 100%; border-collapse: collapse; background: white; border: 1px solid #dcdcdc;">
+                    <thead>
+                        <tr>
+                            <th style="padding: 15px; text-align: left; border-bottom: 1px solid #dcdcdc; font-size: 14px; background-color: #eaeaea; font-weight: bold; color: #333;">Fecha Registro ⇅</th>
+                            <th style="padding: 15px; text-align: left; border-bottom: 1px solid #dcdcdc; font-size: 14px; background-color: #eaeaea; font-weight: bold; color: #333;">RUN ⇅</th>
+                            <th style="padding: 15px; text-align: left; border-bottom: 1px solid #dcdcdc; font-size: 14px; background-color: #eaeaea; font-weight: bold; color: #333;">Nombre Cliente ⇅</th>
+                            <th style="padding: 15px; text-align: left; border-bottom: 1px solid #dcdcdc; font-size: 14px; background-color: #eaeaea; font-weight: bold; color: #333;">Correo ⇅</th>
+                            <th style="padding: 15px; text-align: left; border-bottom: 1px solid #dcdcdc; font-size: 14px; background-color: #eaeaea; font-weight: bold; color: #333;">Estado ⇅</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #dcdcdc; font-size: 14px; color: #333;">2024-05-10</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dcdcdc; font-size: 14px; color: #333;">15678912-3</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dcdcdc; font-size: 14px; color: #333;">Juan Pérez</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dcdcdc; font-size: 14px; color: #333;">juan.perez@gmail.com</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dcdcdc; font-size: 14px; color: #333; font-weight: bold;">Activo</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #dcdcdc; font-size: 14px; color: #333;">2024-05-12</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dcdcdc; font-size: 14px; color: #333;">18999111-K</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dcdcdc; font-size: 14px; color: #333;">María González</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dcdcdc; font-size: 14px; color: #333;">maria.g@gmail.com</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dcdcdc; font-size: 14px; color: #333; font-weight: bold;">Activo</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px; border-bottom: 1px solid #dcdcdc; font-size: 14px; color: #333;">2024-05-15</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dcdcdc; font-size: 14px; color: #333;">12345678-9</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dcdcdc; font-size: 14px; color: #333;">Pedro Rojas</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dcdcdc; font-size: 14px; color: #333;">projas@gmail.com</td>
+                            <td style="padding: 15px; border-bottom: 1px solid #dcdcdc; font-size: 14px; color: #333; font-weight: bold;">Bloqueado</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="paginacion" style="display: flex; justify-content: center; margin-top: 20px; background-color: white; border: 1px solid #dcdcdc; width: fit-content; margin-left: auto; margin-right: auto;">
+                    <span style="padding: 10px 15px; border-right: 1px solid #dcdcdc; cursor: pointer; color: #333;">«</span>
+                    <span style="padding: 10px 15px; border-right: 1px solid #dcdcdc; cursor: pointer; color: #333;">‹</span>
+                    <span class="activo" style="padding: 10px 15px; border-right: 1px solid #dcdcdc; cursor: pointer; background-color: #8ab4f8; color: white; font-weight: bold;">1</span>
+                    <span style="padding: 10px 15px; border-right: 1px solid #dcdcdc; cursor: pointer; color: #333;">2</span>
+                    <span style="padding: 10px 15px; border-right: 1px solid #dcdcdc; cursor: pointer; color: #333;">›</span>
+                    <span style="padding: 10px 15px; cursor: pointer; color: #333;">»</span>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

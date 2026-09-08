@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto - Vida Infinita</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        /* TU CSS INTACTO */
+        .detalle-principal { display: flex; gap: 40px; margin-top: 20px; }
+        .galeria-producto { flex: 1; }
+        .imagen-grande { width: 100%; border: 2px solid #333; margin-bottom: 10px; }
+        .miniaturas { display: flex; gap: 10px; }
+        .miniaturas img { width: 30%; border: 2px solid #333; }
+        .info-producto { flex: 1; }
+        .info-producto h2 { font-size: 1.8em; }
+        .precio-detalle { font-size: 1.5em; text-align: right; margin-top: -30px; font-weight: bold; }
+        .descripcion-larga { border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 20px 0; margin: 20px 0; }
+        .btn-agregar-carrito { background-color: #007bff; color: white; padding: 10px 20px; border: 2px solid #333; width: 100%; cursor: pointer; font-size: 1.2em; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h2>🐾 Vida Infinita</h2>
+            </div>
+            <ul class="enlaces-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="carrito">
+                <a href="carrito.html">🛒 Cart</a>
+            </div>
+            <div class="cuenta">
+                <a href="login.html">Iniciar sesión</a> | 
+                <a href="registro.html">Registrar usuario</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="detalle-principal">
+            <div class="galeria-producto">
+                <!-- ID para inyectar la foto -->
+                <img src="https://placehold.co/400x400?text=Cargando..." alt="Producto Principal" class="imagen-grande" id="img-detalle">
+                <div class="miniaturas">
+                    <img src="https://placehold.co/400x400?text=1" alt="Miniatura 1">
+                    <img src="https://placehold.co/400x400?text=2" alt="Miniatura 2">
+                    <img src="https://placehold.co/400x400?text=3" alt="Miniatura 3">
+                </div>
+            </div>
+            <div class="info-producto">
+                <!-- IDs para inyectar el nombre y el precio -->
+                <h2 id="nombre-detalle">Cargando producto...</h2>
+                <p class="precio-detalle" id="precio-detalle">$ 0</p>
+                <div class="descripcion-larga">
+                    <p>Categoría del producto: <span id="cat-detalle" style="font-weight: bold;">-</span></p>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 20px;">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" id="cantidad" value="1" min="1" style="width: 60px; margin: 0;">
+                </div>
+                <!-- ID en el botón para asignarle la función correcta en JS -->
+                <button class="btn-agregar-carrito" id="btn-comprar-detalle">AÑADIR AL CARRITO</button>
+            </div>
+        </section>
+        
+        <section style="margin-top: 50px;">
+            <h3>Productos Relacionados</h3>
+            <div class="grilla-productos">
+                <!-- Aquí podrías dejar estático o inyectar dinámico, por ahora lo dejamos como lo tenías -->
+                <article class="producto-card">
+                    <img src="https://placehold.co/400x400?text=Arena" alt="Arena">
+                    <h3>Arena Sanitaria 10kg</h3>
+                    <p class="precio">$12000</p>
+                    <button class="btn-agregar" onclick="agregarAlCarrito(2)">Añadir al carrito</button>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>
+            <a href="productos.html?cat=perros" style="color: #333; text-decoration: none;">Categoría Perros</a> | 
+            <a href="productos.html?cat=gatos" style="color: #333; text-decoration: none;">Categoría Gatos</a> | 
+            <a href="productos.html?cat=exoticos" style="color: #333; text-decoration: none;">Categoría Exóticos</a>
+        </p>
+        <div>
+            <label for="boletin-detalle">Suscríbete a nuestro boletín:</label>
+            <input type="email" id="boletin-detalle" placeholder="Enter Email">
+            <button>Suscribir</button>
+        </div>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>

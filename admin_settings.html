@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajustes - Vida Infinita</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="body-admin" id="body-sistema">
+    <div class="contenedor-admin">
+        <aside class="menu-lateral">
+            <div class="logo-admin">
+                <h2><i class="fa-solid fa-compass"></i> Vida Infinita</h2>
+            </div>
+            <nav class="navegacion-admin" style="display: flex; flex-direction: column; height: 100%;">
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="admin_home.html"><i class="fa-solid fa-border-all" style="width: 25px;"></i> Dashboard</a></li>
+                    <li><a href="admin_orders.html"><i class="fa-regular fa-file-lines" style="width: 25px;"></i> Orders</a></li>
+                    <li><a href="admin_productos.html"><i class="fa-solid fa-box" style="width: 25px; color: #a57c52;"></i> Inventory</a></li>
+                    <li><a href="admin_reports.html"><i class="fa-regular fa-file-lines" style="width: 25px;"></i> Reports</a></li>
+                    <li><a href="admin_usuarios.html"><i class="fa-solid fa-users" style="width: 25px;"></i> Employees</a></li>
+                    <li><a href="admin_clientes.html"><i class="fa-solid fa-users" style="width: 25px;"></i> Customers</a></li>
+                </ul>
+                <ul style="list-style: none; padding: 0; margin-top: auto; margin-bottom: 20px;">
+                    <li><a href="admin_settings.html" class="activo" style="display: block; padding: 10px 25px; color: #007bff; text-decoration: none; font-size: 0.9em;"><i class="fa-solid fa-gear" style="width: 20px;"></i> Settings</a></li>
+                    <li><a href="admin_profile.html" style="display: block; padding: 10px 25px; color: #333; text-decoration: none; font-size: 0.9em;"><i class="fa-solid fa-user" style="width: 20px;"></i> Profile</a></li>
+                    <li><a href="#" class="btn-buscar-global" style="display: block; padding: 10px 25px; color: #333; text-decoration: none; font-size: 0.9em;"><i class="fa-solid fa-magnifying-glass" style="width: 20px;"></i> Search</a></li>
+                    <li><a href="#" style="display: block; padding: 10px 25px; color: #333; text-decoration: none; font-size: 0.9em;"><i class="fa-solid fa-question" style="width: 20px; color: red;"></i> Help</a></li>
+                    <li><a href="index.html" style="display: block; padding: 10px 25px; color: #d9534f; text-decoration: none; font-size: 0.9em; font-weight: bold;"><i class="fa-solid fa-arrow-right-from-bracket" style="width: 20px;"></i> Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="contenido-central">
+            <header class="header-admin">
+                <div class="header-izq">
+                    <h1>Ajustes del Sistema</h1>
+                </div>
+                <div class="notificacion"><i class="fa-solid fa-bell" style="color: #f1c40f; font-size: 1.5em;"></i></div>
+            </header>
+            <section class="panel-formulario">
+                <div style="background: white; border: 1px solid #dcdcdc; padding: 30px; max-width: 600px;">
+                    <h3>Configuración de Visualización</h3>
+                    <br>
+                    <label><strong>Tamaño de Fuente Global:</strong></label>
+                    <select id="select-fuente" style="margin-top: 10px; margin-bottom: 20px;">
+                        <option value="14px">Pequeña</option>
+                        <option value="16px" selected>Normal</option>
+                        <option value="18px">Grande</option>
+                        <option value="20px">Extra Grande</option>
+                    </select>
+                    
+                    <label><strong>Color de Fondo (Tema):</strong></label>
+                    <select id="select-tema" style="margin-top: 10px; margin-bottom: 20px;">
+                        <option value="#f5f6f8" selected>Claro (Por defecto)</option>
+                        <option value="#d1d8e0">Gris Frío</option>
+                        <option value="#fdf6e3">Solarizado</option>
+                    </select>
+
+                    <button class="btn-negro" onclick="aplicarAjustes()">Guardar Ajustes</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+    <script>
+        function aplicarAjustes() {
+            const tamano = document.getElementById('select-fuente').value;
+            const tema = document.getElementById('select-tema').value;
+            document.getElementById('body-sistema').style.fontSize = tamano;
+            document.getElementById('body-sistema').style.backgroundColor = tema;
+            alert("Ajustes aplicados correctamente.");
+        }
+    </script>
+</body>
+</html>

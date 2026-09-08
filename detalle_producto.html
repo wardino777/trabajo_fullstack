@@ -44,7 +44,6 @@
     <main>
         <section class="detalle-principal">
             <div class="galeria-producto">
-                <!-- ID para inyectar la foto -->
                 <img src="https://placehold.co/400x400?text=Cargando..." alt="Producto Principal" class="imagen-grande" id="img-detalle">
                 <div class="miniaturas">
                     <img src="https://placehold.co/400x400?text=1" alt="Miniatura 1">
@@ -53,7 +52,6 @@
                 </div>
             </div>
             <div class="info-producto">
-                <!-- IDs para inyectar el nombre y el precio -->
                 <h2 id="nombre-detalle">Cargando producto...</h2>
                 <p class="precio-detalle" id="precio-detalle">$ 0</p>
                 <div class="descripcion-larga">
@@ -63,7 +61,6 @@
                     <label for="cantidad">Cantidad:</label>
                     <input type="number" id="cantidad" value="1" min="1" style="width: 60px; margin: 0;">
                 </div>
-                <!-- ID en el botón para asignarle la función correcta en JS -->
                 <button class="btn-agregar-carrito" id="btn-comprar-detalle">AÑADIR AL CARRITO</button>
             </div>
         </section>
@@ -71,9 +68,8 @@
         <section style="margin-top: 50px;">
             <h3>Productos Relacionados</h3>
             <div class="grilla-productos">
-                <!-- Aquí podrías dejar estático o inyectar dinámico, por ahora lo dejamos como lo tenías -->
                 <article class="producto-card">
-                    <img src="https://placehold.co/400x400?text=Arena" alt="Arena">
+                    <img src="img/arena.webp" alt="Arena">
                     <h3>Arena Sanitaria 10kg</h3>
                     <p class="precio">$12000</p>
                     <button class="btn-agregar" onclick="agregarAlCarrito(2)">Añadir al carrito</button>

@@ -1,6 +1,5 @@
 function validarCorreo(email) {
     return email.endsWith("@duoc.cl") || 
-           email.endsWith("@profesor.duoc.cl") || 
            email.endsWith("@gmail.com");
 }
 
@@ -30,7 +29,7 @@ if (formRegistro) {
         evento.preventDefault();
         const correo = document.getElementById('correo').value;
         const pass = document.getElementById('contrasena').value;
-        const confirmPass = document.getElementById('confirmar-contrasena').value;
+        const confirmPass = document.getElementById('confirmar-contraseña').value;
 
         if (!validarCorreo(correo)) return alert("Error en correo");
         if (pass.length < 4 || pass.length > 10) return alert("Error en contraseña");
@@ -69,17 +68,17 @@ if (formContacto) {
 }
 
 const productosBase = [
-    { id: 1, codigo: "PRD-001", nombre: "Alimento Gatos 3kg", precio: 25000, stock: 15, categoria: "Gatos", imagen: "https://placehold.co/400x400?text=Comida+Gato" },
-    { id: 2, codigo: "PRD-002", nombre: "Arena Sanitaria 10kg", precio: 12000, stock: 5, categoria: "Gatos", imagen: "https://placehold.co/400x400?text=Arena" },
-    { id: 3, codigo: "PRD-003", nombre: "Varita interactiva", precio: 4500, stock: 20, categoria: "Gatos", imagen: "https://placehold.co/400x400?text=Juguete" },
-    { id: 4, codigo: "PRD-004", nombre: "Alimento Perros 15kg", precio: 35000, stock: 10, categoria: "Perros", imagen: "https://placehold.co/400x400?text=Comida+Perro" },
-    { id: 5, codigo: "PRD-005", nombre: "Hueso Masticable", precio: 3500, stock: 50, categoria: "Perros", imagen: "https://placehold.co/400x400?text=Hueso+Perro" },
-    { id: 6, codigo: "PRD-006", nombre: "Correa Retráctil 5m", precio: 15000, stock: 8, categoria: "Perros", imagen: "https://placehold.co/400x400?text=Correa+Perro" },
-    { id: 7, codigo: "PRD-007", nombre: "Alimento Hámster 1kg", precio: 4500, stock: 12, categoria: "Exoticos", imagen: "https://placehold.co/400x400?text=Comida+Hamster" },
-    { id: 8, codigo: "PRD-008", nombre: "Heno para Conejos 2kg", precio: 6000, stock: 25, categoria: "Exoticos", imagen: "https://placehold.co/400x400?text=Heno+Conejo" },
-    { id: 9, codigo: "PRD-009", nombre: "Cama Suave Gatos", precio: 18000, stock: 6, categoria: "Gatos", imagen: "https://placehold.co/400x400?text=Cama+Gato" },
-    { id: 10, codigo: "PRD-010", nombre: "Shampoo Perros", precio: 8000, stock: 30, categoria: "Perros", imagen: "https://placehold.co/400x400?text=Shampoo+Perro" },
-    { id: 11, codigo: "PRD-011", nombre: "Jaula Transportadora", precio: 22000, stock: 4, categoria: "Perros", imagen: "https://placehold.co/400x400?text=Jaula" }
+    { id: 1, codigo: "PRD-001", nombre: "Alimento Gatos 3kg", precio: 25000, stock: 15, categoria: "Gatos", imagen: "img/Alimento-Gato.jpg" },
+    { id: 2, codigo: "PRD-002", nombre: "Arena Sanitaria 10kg", precio: 12000, stock: 5, categoria: "Gatos", imagen: "img/Arena.webp" },
+    { id: 3, codigo: "PRD-003", nombre: "Varita interactiva", precio: 4500, stock: 20, categoria: "Gatos", imagen: "img/varita.webp" },
+    { id: 4, codigo: "PRD-004", nombre: "Alimento Perros 15kg", precio: 35000, stock: 10, categoria: "Perros", imagen: "img/Alimento-Perro.jpg" },
+    { id: 5, codigo: "PRD-005", nombre: "Hueso Masticable", precio: 3500, stock: 50, categoria: "Perros", imagen: "img/hueso.jpg" },
+    { id: 6, codigo: "PRD-006", nombre: "Correa Retráctil 5m", precio: 15000, stock: 8, categoria: "Perros", imagen: "img/cue.jpg" },
+    { id: 7, codigo: "PRD-007", nombre: "Alimento Hámster 1kg", precio: 4500, stock: 12, categoria: "Exoticos", imagen: "img/Alimento-Hamster.jpg" },
+    { id: 8, codigo: "PRD-008", nombre: "Heno para Conejos 2kg", precio: 6000, stock: 25, categoria: "Exoticos", imagen: "img/heno.jpg" },
+    { id: 9, codigo: "PRD-009", nombre: "Cama Suave Gatos", precio: 18000, stock: 6, categoria: "Gatos", imagen: "img/Cama.webp" },
+    { id: 10, codigo: "PRD-010", nombre: "Shampoo Perros", precio: 8000, stock: 30, categoria: "Perros", imagen: "img/sha.webp" },
+    { id: 11, codigo: "PRD-011", nombre: "Jaula Transportadora", precio: 22000, stock: 4, categoria: "Perros", imagen: "img/ja.jpg" }
 ];
 
 let inventarioData = JSON.parse(localStorage.getItem('inventarioVetShop')) || productosBase;
@@ -99,7 +98,6 @@ if (contenedorProductos && window.location.pathname.includes('productos.html')) 
     }
 
     productosAMostrar.forEach(producto => {
-        // --- CAMBIO AQUÍ: Agregué el enlace <a> que envía el ID a detalle_producto.html ---
         contenedorProductos.innerHTML += `
             <article class="producto-card">
                 <a href="detalle_producto.html?id=${producto.id}" style="text-decoration: none; color: inherit;">
@@ -114,7 +112,6 @@ if (contenedorProductos && window.location.pathname.includes('productos.html')) 
 } else if (contenedorProductos && window.location.pathname.includes('index.html')) {
     contenedorProductos.innerHTML = '';
     inventarioData.slice(0, 4).forEach(producto => {
-        // --- CAMBIO AQUÍ: También agregué el enlace <a> para el Home ---
         contenedorProductos.innerHTML += `
             <article class="producto-card">
                 <a href="detalle_producto.html?id=${producto.id}" style="text-decoration: none; color: inherit;">
@@ -240,15 +237,12 @@ function renderizarCarrito() {
 
     if (contenedorCarrito) {
         contenedorCarrito.innerHTML = ''; 
-        let totalPrecio = 0;
 
         if (carrito.length === 0) {
             contenedorCarrito.innerHTML = '<p>Tu carrito está vacío</p>';
             if (textoTotal) textoTotal.innerText = "$ 0";
         } else {
             carrito.forEach((item, index) => {
-                const subtotal = item.precio * item.cantidad;
-                totalPrecio += subtotal;
                 contenedorCarrito.innerHTML += `
                     <article class="item-carrito">
                         <img src="${item.imagen}" alt="${item.nombre}" width="100">
@@ -266,7 +260,6 @@ function renderizarCarrito() {
                     </article>
                 `;
             });
-            if (textoTotal) textoTotal.innerText = "$ " + totalPrecio;
         }
     }
 }
@@ -280,38 +273,7 @@ if (btnPagar) {
             alert("El carrito está vacío. Añade productos antes de pagar.");
             return;
         }
-        alert("¡Compra realizada con éxito! Gracias por su preferencia.");
-        carrito = [];
-        localStorage.removeItem('carritoVetShop');
-        window.location.reload();
-    });
-}
-
-const formNuevoProducto = document.getElementById('form-nuevo-producto');
-if (formNuevoProducto) {
-    formNuevoProducto.addEventListener('submit', function(evento) {
-        evento.preventDefault();
-        const nuevoId = inventarioData.length > 0 ? Math.max(...inventarioData.map(p => p.id)) + 1 : 1;
-        const codigo = document.getElementById('codigo-producto').value;
-        const nombre = document.getElementById('nombre-prod').value;
-        const precio = parseInt(document.getElementById('precio-prod').value);
-        const stock = parseInt(document.getElementById('stock-prod').value);
-        const categoria = document.getElementById('categoria-prod').value;
-        
-        const nuevoProducto = {
-            id: nuevoId,
-            codigo: codigo,
-            nombre: nombre,
-            precio: precio,
-            stock: stock,
-            categoria: categoria,
-            imagen: "https://placehold.co/400x400?text=Nuevo+Producto"
-        };
-
-        inventarioData.push(nuevoProducto);
-        localStorage.setItem('inventarioVetShop', JSON.stringify(inventarioData));
-        alert("Producto guardado exitosamente");
-        window.location.href = "admin_productos.html";
+        alert("¡Compra realizada con éxito! Gracias por su preferencia.");  
     });
 }
 
@@ -488,7 +450,6 @@ if (window.location.pathname.includes('detalle_producto.html')) {
             if (catDetalle) catDetalle.innerText = productoEncontrado.categoria;
             
             if (btnComprar) {
-                // Modifica el botón para que inyecte el producto correcto al carrito
                 btnComprar.setAttribute('onclick', `agregarAlCarrito(${productoEncontrado.id})`);
             }
         }
